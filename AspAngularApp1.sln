@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspAngularApp1.Server", "As
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "aspangularapp1.client", "aspangularapp1.client\aspangularapp1.client.esproj", "{20739148-3AA5-4039-9B4C-564339B1B3EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D851B34-A245-425B-AADA-8A9DAE4D1A4B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+/AspAngularApp1.Server/Properties/serviceDependencies.json
+/AspAngularApp1.Server/Properties/serviceDependencies.local.json

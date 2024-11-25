@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
+    this.http.get<WeatherForecast[]>('/api/weatherforecast').subscribe(
       (result) => {
         this.forecasts = result;
       },
@@ -32,6 +32,13 @@ export class AppComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  onCreateConsultant() {
+    this.http.post('/api/consultants', {
+      Name: 'Martin Freeman',
+      Description: 'Developer'
+    }).subscribe();
   }
 
   title = 'aspangularapp1.client';
