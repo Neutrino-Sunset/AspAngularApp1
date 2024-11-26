@@ -24,3 +24,9 @@
 </table>
 
 <button (click)="onCreateConsultant()">Create Consultant</button>
+
+<p>User Name:{{userName()}}</p>
+<p>User Email:{{userEmail()}}</p>
+
+<button (click)="onLogIn()" [disabled]="userName()">Log In</button>
+<button (click)="onLogOut()" [disabled]="!userName()">Log out</button>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
+import { AuthService } from './services/authService';
 
 interface WeatherForecast {
   date: string;
@@ -16,10 +17,18 @@ interface WeatherForecast {
 })
 export class AppComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];
+  public userEmail: Signal<string | null>;
+  public userName: Signal<string | null>;
 
-  constructor(private http: HttpClient) {}
+  title = 'aspangularapp1.client';
+
+  constructor(private http: HttpClient, private authService: AuthService) {
+    this.userEmail = this.authService.userEmail;
+    this.userName = this.authService.userName;
+  }
 
   ngOnInit() {
+    this.authService.init();
     this.getForecasts();
   }
 
@@ -41,5 +50,11 @@ export class AppComponent implements OnInit {
     }).subscribe();
   }
 
-  title = 'aspangularapp1.client';
+  async onLogIn() {
+    await this.authService.logIn();
+  }
+
+  async onLogOut() {
+    await this.authService.logOut();
+  }
 }
