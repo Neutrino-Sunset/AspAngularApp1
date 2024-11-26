@@ -18,7 +18,8 @@ Disable nullable for service project
 
 Disable Launch Browser for service project
 
-> project properties -> Debug -> Open debug launch profiles UI
+- Project properties -> Debug -> Open debug launch profiles UI
+- Uncheck `Launch browser`
 
 Update client proxy config
 
@@ -43,14 +44,14 @@ Ignore service dependencies
 
 - Add `serviceDependencies.json` and `serviceDependencies.local.json` to `.gitignore`
 
-Add authentication
+Add authentication using Azure AD
 
 - Create Azure Application Registration
 	- Add redirect https://localhost:55959/
 	- Leave `Access tokens` and `ID tokens` option unchecked
 	- Select `Accounts in this organizational directory only`
 - In client project install msal-browser `npm i @azure/msal-browser`
-- Add AuthService, update tenantId and clientId.
+- Add `AuthService`, update tenantId and clientId.
 - Call `AuthService.init` in `AppComponent.ngOnInit`
 - Wire up login/logout buttons
 
